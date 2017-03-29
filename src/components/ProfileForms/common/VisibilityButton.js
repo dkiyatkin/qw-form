@@ -17,7 +17,7 @@ export default class VisibilityButton extends React.Component {
     const { isVisible, onClick } = this.props
 
     return (
-      <Button type='button' color='secondary' onClick={onClick} className={cn(styles.empty, this.props.className)}>
+      <Button type='button' color='secondary' onClick={onClick} className={cn(styles.itemBtn, this.props.className)}>
         {
           isVisible ? (
             <FaIcon icon='eye' />

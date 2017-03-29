@@ -4,8 +4,6 @@ import { FormGroup, Label } from 'reactstrap'
 
 import VisibilityButton from 'qwForm/components/ProfileForms/common/VisibilityButton'
 
-import styles from 'qwForm/styles/profileForms.item.scss'
-
 export default class SetVisibiltyFormGroup extends React.Component {
   static propTypes = {
     className: React.PropTypes.string,
@@ -17,9 +15,10 @@ export default class SetVisibiltyFormGroup extends React.Component {
     const { isVisible, toggleVisibility } = this.props
 
     return (
-      <FormGroup className={cn(styles.empty, this.props.className)}>
+      <FormGroup className={cn(this.props.className)}>
         <Label>
           <VisibilityButton isVisible={isVisible} onClick={toggleVisibility} />
+          {' '}
           { isVisible ? 'Показывать в профиле' : 'Не показывать в профиле' }
         </Label>
       </FormGroup>

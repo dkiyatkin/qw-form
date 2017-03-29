@@ -1,5 +1,6 @@
 import React from 'react'
 import cn from 'classnames'
+import { Button } from 'reactstrap'
 
 import FaIcon from 'qwForm/components/common/FaIcon'
 import VisibilityButton from 'qwForm/components/ProfileForms/common/VisibilityButton'
@@ -31,10 +32,20 @@ export default class Item extends React.Component {
     const { name, itemType, isVisible, toggleVisibility, onEditClick } = this.props
 
     return (
-      <div>
-        {name} {this.props.children}
-        { toggleVisibility ? <VisibilityButton isVisible={isVisible} onClick={this.toggleVisibilityAndSave} /> : null }
-        <FaIcon icon='pencil' onClick={onEditClick.bind(this, itemType)} />
+      <div className={cn(styles.doneItem)}>
+        <div className={cn(styles.name)}>{name}</div>
+
+        <div className={cn(styles.value)}>
+          {this.props.children}
+        </div>
+
+        <div className={cn(styles.itemBtns)}>
+          { toggleVisibility ? <VisibilityButton isVisible={isVisible} onClick={this.toggleVisibilityAndSave} /> : null }
+          {' '}
+          <Button className={cn(styles.itemBtn)} type='button' color='secondary' onClick={onEditClick.bind(this, itemType)}>
+            <FaIcon icon='pencil' />
+          </Button>
+        </div>
       </div>
     )
   }
@@ -43,7 +54,10 @@ export default class Item extends React.Component {
     const { name, itemType, onEditClick } = this.props
 
     return (
-      <div onClick={onEditClick.bind(this, itemType)}> + {name} </div>
+      <div className={cn(styles.emptyItem)} onClick={onEditClick.bind(this, itemType)}>
+        <div className={cn(styles.plus)} />
+        <div className={cn(styles.name)}>{name}</div>
+      </div>
     )
   }
 
@@ -52,7 +66,7 @@ export default class Item extends React.Component {
 
     let component
     if (isEdit) {
-      component = <EditComponent name={name} itemType={itemType} isVisible={isVisible} toggleVisibility={toggleVisibility} onCancelClick={onCancelClick} save={save} />
+      component = <EditComponent className={cn(styles.editItem)} name={name} itemType={itemType} isVisible={isVisible} toggleVisibility={toggleVisibility} onCancelClick={onCancelClick} save={save} />
     } else {
       if (this.props.children) {
         component = this.renderDoneItem()

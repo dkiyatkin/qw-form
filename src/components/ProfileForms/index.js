@@ -12,7 +12,7 @@ import Item from 'qwForm/components/ProfileForms/Item'
 
 import styles from 'qwForm/styles/profileForms.scss'
 
-class Profile extends React.Component {
+class ProfileForms extends React.Component {
   static propTypes = {
     className: React.PropTypes.string,
     isPersonalInfoEdit: React.PropTypes.bool,
@@ -33,7 +33,7 @@ class Profile extends React.Component {
     const { isPersonalInfoEdit, isGenderEdit, isAboutEdit, personalInfoValue, genderValue, aboutValue, isGenderVisible, isAboutVisible, toggleVisibility, onEditClick, onCancelClick, save } = this.props
 
     return (
-      <div className={cn(styles.profile, this.props.className)}>
+      <div className={cn(styles.profileForms, this.props.className)}>
         <Item
           EditComponent={PersonalInfo} name='Персональные данные' isEdit={isPersonalInfoEdit}
           itemType='personalInfo'
@@ -91,7 +91,7 @@ function mapDispatchToProps (dispatch, ownProps) {
       dispatch(formActions.toggle(`rrf.profile[${itemType}].isVisible`))
     },
     onEditClick: function (itemType, event) {
-      // можно сделать cancel остальным
+      // можно делать cancel остальным
       dispatch(formActions.change(`rrf.profile[${itemType}].isEdit`, true, {silent: true}))
     },
     onCancelClick: function (itemType, event) {
@@ -113,6 +113,6 @@ function mapDispatchToProps (dispatch, ownProps) {
   }
 }
 
-const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(Profile)
+const ProfileFormsContainer = connect(mapStateToProps, mapDispatchToProps)(ProfileForms)
 
-export default ProfileContainer
+export default ProfileFormsContainer

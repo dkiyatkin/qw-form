@@ -5,3 +5,23 @@ body {
   background-color: #fff;
   height: 100%;
 }
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: $font-family-base;
+}
+
+.form-control {
+  font-family: $font-family-base;
+}
+
+button {
+  cursor: pointer;
+}
+
+button[disabled] {
+  cursor: not-allowed;
+}

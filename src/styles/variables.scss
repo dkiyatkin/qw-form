@@ -1,7 +1,14 @@
 // bootstrap variables
 
+$enable-shadows: true !default;
+$enable-gradients: true !default;
+
+$font-family-base: 'Open Sans', sans-serif !default;
+
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
 @import '~bootstrap/scss/custom';
 
 // app variables
+
+$qw-item-border: 1px solid #ebebeb;

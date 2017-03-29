@@ -46,7 +46,7 @@ class Gender extends React.Component {
 
     return (
       <Form model='rrf.profile.about' onSubmit={this.onSubmit} className={cn(styles.about, this.props.className)}>
-        {name}
+        <div className={cn(styles.name)}>{name}</div>
 
         <FormGroup>
           <Select

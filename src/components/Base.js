@@ -12,8 +12,8 @@ export default class Base extends React.Component {
 
   render () {
     return (
-      <div className={cn(styles.base, this.props.className)}>
-        <ProfileForms />
+      <div className={cn('p-5', styles.base, this.props.className)}>
+        <ProfileForms className={cn('mx-auto', styles.profileForms)} />
       </div>
     )
   }

@@ -1,0 +1,102 @@
+@import '~qwForm/styles/variables';
+
+.item {
+}
+
+.itemBtn {
+  background-color: transparent !important;
+  padding: 2px 4px !important;
+}
+
+.emptyItem, .doneItem, .editItem {
+  border-bottom: $qw-item-border;
+  padding: 7px;
+}
+
+.emptyItem, .doneItem {
+  height: 40px;
+}
+
+.name {
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.doneItem {
+  &:hover {
+    .itemBtns {
+      visibility: visible;
+    }
+  }
+
+  display: flex;
+  align-items: start;
+
+  .name {
+    width: 220px;
+    flex-shrink: 0;
+    margin: 0;
+  }
+  .value {
+    width: 100%;
+  }
+  .itemBtns {
+    flex-shrink: 0;
+    visibility: hidden;
+    width: 90px;
+    border-left: $qw-item-border;
+    text-align: right;
+
+    .itemBtn {
+      vertical-align: bottom;
+    }
+  }
+}
+
+.plus {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  margin-top: 4px;
+
+  &:after,
+  &:before {
+    display: block;
+    position: relative;
+    content: ' ';
+    width: 16px;
+    height: 2px;
+    background-color: #3987cd;
+    right: 0px;
+    top: -9px;
+  }
+  &:before {
+    width: 2px;
+    height: 16px;
+    right: -7px;
+    top: 0px;
+  }
+}
+
+.emptyItem {
+  cursor: pointer;
+  color: #3987cd;
+
+  .name {
+    color: inherit;
+    padding-left: 25px;
+  }
+
+  &:hover {
+    background-color: #3987cd;
+    color: #fff;
+
+    .plus {
+      &:after,
+      &:before {
+        background-color: #fff;
+      }
+    }
+  }
+}
+

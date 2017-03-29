@@ -38,10 +38,10 @@ class PersonalInfo extends React.Component {
 
     return (
       <Form model='rrf.profile.personalInfo' onSubmit={this.onSubmit} className={cn(styles.about, this.props.className)}>
-        {name}
+        <div className={cn(styles.name)}>{name}</div>
 
         <div>
-          <FormGroup>
+          <FormGroup className='mb-0'>
             <Label>
               Фамилия
               <Control model='.surname' component={Input} type='text' autoFocus />
@@ -52,7 +52,7 @@ class PersonalInfo extends React.Component {
         </div>
 
         <div>
-          <FormGroup>
+          <FormGroup className='mb-0'>
             <Label>
               Имя
               <Control model='.name' component={Input} type='text' />
@@ -63,7 +63,7 @@ class PersonalInfo extends React.Component {
         </div>
 
         <div>
-          <FormGroup>
+          <FormGroup className='mb-0'>
             <Label>
               Отчество
               <Control model='.patronymic' component={Input} type='text' />

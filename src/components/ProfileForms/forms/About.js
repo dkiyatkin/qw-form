@@ -33,9 +33,9 @@ class Counter extends React.Component {
     }
 
     return (
-      <span>
-        { count } { text }
-      </span>
+      <div>
+        ({ count } { text })
+      </div>
     )
   }
 }
@@ -62,7 +62,7 @@ class About extends React.Component {
 
     return (
       <Form model='rrf.profile.about' onSubmit={this.onSubmit} className={cn(styles.about, this.props.className)}>
-        {name}
+        <div className={cn(styles.name)}>{name}</div>
 
         <FormGroup>
           <Label>
